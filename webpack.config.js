@@ -95,6 +95,9 @@ const webviewConfig = {
           {
             loader: "css-loader",
           },
+          {
+            loader: "postcss-loader",
+          },
         ],
       },
       {
