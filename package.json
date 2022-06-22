@@ -1,5 +1,5 @@
 {
-  "name": "vscode-svelte-boilerplate",
+	"name": "vscode-svelte-boilerplate",
 	"displayName": "vscode-svelte-boilerplate",
 	"description": "",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vscode-svelte-boilerplate.helloWorld"
+		"onCommand:vscode-svelte-boilerplate.helloWorld"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -33,19 +33,24 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.68.0",
+		"@tsconfig/svelte": "^3.0.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.0",
 		"@types/node": "14.x",
+		"@types/vscode": "^1.68.0",
 		"@typescript-eslint/eslint-plugin": "^5.12.1",
 		"@typescript-eslint/parser": "^5.12.1",
+		"@vscode/test-electron": "^2.1.2",
+		"css-loader": "^6.7.1",
 		"eslint": "^8.9.0",
 		"glob": "^7.2.0",
+		"mini-css-extract-plugin": "^2.6.1",
 		"mocha": "^9.2.1",
-		"typescript": "^4.5.5",
+		"svelte": "^3.48.0",
+		"svelte-loader": "^3.1.3",
 		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
 		"webpack": "^5.69.1",
-		"webpack-cli": "^4.9.2",
-		"@vscode/test-electron": "^2.1.2"
+		"webpack-cli": "^4.9.2"
 	}
 }
