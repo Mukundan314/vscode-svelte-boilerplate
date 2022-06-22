@@ -14,9 +14,32 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('vscode-svelte-boilerplate.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-svelte-boilerplate!');
+		const webviewPanel = vscode.window.createWebviewPanel(
+			'vscode-svelte-boilerplate.helloWorld',
+			'Hello World',
+			vscode.ViewColumn.One,
+			{ enableScripts: true },
+		);
+
+  	const stylesheetPath = webviewPanel.webview.asWebviewUri(
+  	  vscode.Uri.joinPath(context.extensionUri, "dist/pages/hello-world.css")
+  	);
+
+  	const scriptPath = webviewPanel.webview.asWebviewUri(
+  	  vscode.Uri.joinPath(context.extensionUri, "dist/pages/hello-world.js")
+  	);
+
+		webviewPanel.webview.html = `
+		<!DOCTYPE html>
+		<html>
+    	<head>
+    	  <link rel="stylesheet" href="${stylesheetPath}">
+    	  <script defer src="${scriptPath}"></script>
+    	</head>
+    	<body>
+    	</body>
+		</html>
+		`;
 	});
 
 	context.subscriptions.push(disposable);
